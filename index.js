@@ -80,4 +80,5 @@ lap.addEventListener("click", () => {
 //!Click on clear lap button
 clearLap.addEventListener("click", () => {
     display.innerHTML = "";
+    lapCount = 1;
 });
