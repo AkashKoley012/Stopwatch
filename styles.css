@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* overflow: scroll; */
+}
+
+hr {
+    width: 45rem;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to right ,#1a1c57, #42c2aa);
+}
+
+#time {
+    display: flex;
+}
+
+#hours {
+    display: flex;
+    align-items: baseline;
+}
+
+#minute {
+    display: flex;
+    align-items: baseline;
+}
+
+#second {
+    display: flex;
+    align-items: baseline;
+}
+
+#miliSecond {
+    display: flex;
+    align-items: baseline;
+}
+
+.digit {
+    font-size: 8rem;
+    font-family: "digital-7";
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container .digit {
+    font-size: 3rem;
+}
+
+.text {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.container .text {
+    font-size: 1.2rem;
+}
+
+.number {
+    font-size: 2.5rem !important;
+    padding-right: 2rem;
+}
+
+.down {
+    width: 100vw;
+    height: 10vh;
+}
+
+#date {
+    font-size: 1.8rem;
+    margin:1rem 0;
+    /* font-weight: bold; */
+}
+
+#btn {
+    width: 45rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-radius: 1rem;
+    border-image-source: linear-gradient(to right bottom, black, white);
+    padding: 1.2rem;
+    border-radius: 1.8rem;
+}
+
+#start {
+    padding-right: 1.72rem;
+}
+
+#stop {
+    display: none;
+}
+
+#display {
+    /* position: fixed; */
+    /* top: 40rem; */
+    overflow-y: scroll;
+    width: 100vw;
+    height: 20vh;
+    margin-left: 6rem;
+}
+
+::-webkit-scrollbar {
+    width: 10rem;
+}
+
+.button i{
+    margin-right: 0.5rem;
+}
+
+@font-face {
+    font-family: "digital-7";
+    src: url("font/digital-7.ttf");
+}
+
