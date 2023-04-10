@@ -10,18 +10,21 @@ const hours = document.querySelector("#hours .digit");
 const display = document.querySelector("#display");
 const date_position = document.getElementById("date");
 
+//!Setting up Date
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const today = new Date();
 date_position.innerHTML = `${today.getDate()} ${months[today.getMonth()]} , ${today.getFullYear()}`;
 
-var clear_stop,
-    count = 0,
-    lapCount = 1;
+var startID; //!get id from setInterval
+var count = 0; //!counting the mini second
+var lapCount = 1; //!counting the no of laps
+
+//!Click on start button
 start.addEventListener("click", () => {
     stop.style.display = "block";
     start.style.display = "none";
-    clear_stop = setInterval(() => {
+    startID = setInterval(() => {
         mili_second.innerHTML = count % 100 < 10 ? "0" + (count % 100) : count % 100;
         second.innerHTML = Math.floor(count / 100) % 60 < 10 ? "0" + (Math.floor(count / 100) % 60) : Math.floor(count / 100) % 60;
         minute.innerHTML = Math.floor(count / 6000) % 60 < 10 ? "0" + (Math.floor(count / 6000) % 60) : Math.floor(count / 6000) % 60;
@@ -31,14 +34,16 @@ start.addEventListener("click", () => {
     }, 10);
 });
 
+//! Click on pause button
 stop.addEventListener("click", () => {
     stop.style.display = "none";
     start.style.display = "block";
-    clearInterval(clear_stop);
+    clearInterval(startID);
 });
 
+//! Click on reset button
 reset.addEventListener("click", () => {
-    clearInterval(clear_stop);
+    clearInterval(startID);
     stop.style.display = "none";
     start.style.display = "block";
     mili_second.innerHTML = "00";
@@ -46,6 +51,7 @@ reset.addEventListener("click", () => {
     minute.innerHTML = "00";
 });
 
+//!Click to laps button
 lap.addEventListener("click", () => {
     display.innerHTML =
         display.innerHTML +
@@ -71,8 +77,7 @@ lap.addEventListener("click", () => {
     display.scrollTo(0, display.scrollHeight);
 });
 
+//!Click on clear lap button
 clearLap.addEventListener("click", () => {
     display.innerHTML = "";
 });
-
-display.scrollIntoView();
